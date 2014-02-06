@@ -1,0 +1,23 @@
+{
+    "name": "wemakecustom/wp-mu-loader",
+    "type": "wordpress-muplugin",
+    "description": "Enables the loading of Wordpress plugins sitting in mu-plugins (as folders)",
+    "keywords": ["wordpress","plugins"],
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "WeMakeCustom",
+            "email": "info@wemakecustom.com",
+            "homepage": "http://www.wemakecustom.com"
+        }
+    ],
+    "require": {
+        "composer/installers": "~1.0"
+    },
+    "suggest" : {
+        "wemakecustom/wp-mu-composer": "Composer includer"
+    },
+    "extra": {
+        "installer-name": "mu-loader"
+    }
+}
