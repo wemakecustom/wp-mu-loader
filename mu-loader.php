@@ -36,7 +36,7 @@ function mu_loader_plugins_files()
     return $plugins;
 }
 
-add_action('muplugins_loaded', function(){
+add_action('muplugins_loaded', function () {
     if (isset($_SERVER['REQUEST_URI']) && strpos($_SERVER['REQUEST_URI'], '/wp-admin/plugins.php') !== false) {
         // delete cache when viewing plugins page in /wp-admin/
         delete_site_transient('mu_loader_plugins');
@@ -50,9 +50,9 @@ add_action('muplugins_loaded', function(){
 /**
  * Add rows for each subplugin under this plugin when listing mu-plugins in wp-admin
  */
-add_action('admin_init', function() {
+add_action('admin_init', function () {
 
-    add_action('after_plugin_row_mu-require.php', function() {
+    add_action('after_plugin_row_mu-require.php', function () {
         $table = new WP_Plugins_List_Table;
 
         foreach (mu_loader_plugins_files() as $plugin_file) {
