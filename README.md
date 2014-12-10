@@ -5,16 +5,35 @@ Builds a list of all plugins in the `wp-content/mu-plugins` folder and include t
 Uses the internal Wordpress function `get_plugins` for better compatibility.
 In theory, any plugin could be included this way.
 
-Sadly, get_mu_plugins does not have any hooks.
+Sadly, `get_mu_plugins` does not have any hooks.
 
  * Will clear cache when visiting the plugin page in /wp-admin/.
  * Will also clear cache if a previously detected mu-plugin was deleted.
 
-[Original idea](http://blog.lavoie.sl/2013/08/wordpress-mu-plugins-subdirectory-loader.html)
+[Original idea](https://gist.github.com/lavoiesl/6302907)
+
+[Blog post](http://blog.lavoie.sl/2013/08/wordpress-mu-plugins-subdirectory-loader.html)
 
 ## Installation
 
-Copy or symlink `mu-require.php` into `wp-content/mu-plugins/`
+### Composer
+
+Add this to your `composer.json`:
+```json
+{
+    "require": {
+        "wemakecustom/wp-mu-loader": "*"
+    }
+}
+```
+
+### Manual
+
+Extract/clone this plugin in `wp-content/mu-plugins/mu-loader/` 
+
+### IMPORTANT
+
+**Copy or symlink `mu-require.php` into `wp-content/mu-plugins/`**
 
 ## Usage
 
