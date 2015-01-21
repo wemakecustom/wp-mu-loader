@@ -2,6 +2,12 @@
 
 function mu_loader_plugins_files()
 {
+    global $wpdb;
+    if ( $wpdb->get_var("SHOW TABLES LIKE '" . $wpdb->prefix . "options'") !== $wpdb->prefix . 'options' ) {
+      // Database tables have not been created yet
+      return array();
+    }
+    
     // Cache plugins
     $plugins = get_site_transient('mu_loader_plugins');
 
