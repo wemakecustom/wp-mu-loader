@@ -3,11 +3,6 @@
 function mu_loader_plugins_files()
 {
   
-    if (defined('WP_INSTALLING') && WP_INSTALLING === true) {
-      // Do nothing during installation
-      return array();
-    }
-  
     // Cache plugins
     $plugins = get_site_transient('mu_loader_plugins');
 
@@ -22,7 +17,7 @@ function mu_loader_plugins_files()
         }
     }
 
-    if ($plugins === false) {
+    if ($plugins === false || $plugins === array()) {
         if (!function_exists('get_plugins')) {
             // get_plugins is not included by default
             require ABSPATH . 'wp-admin/includes/plugin.php';
