@@ -22,7 +22,7 @@ function mu_loader_plugins_files()
         }
     }
 
-    if ($plugins === false) {
+    if ($plugins === false || $plugins === array()) {
         if (!function_exists('get_plugins')) {
             // get_plugins is not included by default
             require ABSPATH . 'wp-admin/includes/plugin.php';
