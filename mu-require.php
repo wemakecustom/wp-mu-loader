@@ -3,7 +3,7 @@
  * Plugin Name: MU plugins subdirectory loader
  * Plugin URI: https://github.com/wemakecustom/wp-mu-loader
  * Description: Enables the loading of plugins sitting in mu-plugins (as folders)
- * Version: 1.0
+ * Version: 1.1
  * Author: WeMakeCustom
  * Author URI: http://www.wemakecustom.com/
  *
